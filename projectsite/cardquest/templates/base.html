@@ -8,7 +8,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <link rel="stylesheet" href="{% static 'css/style.css'}" />
+    <link rel="stylesheet" href="{% static 'css/style.css'}"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link href='https://fonts.googleapis.com/css?family=Roboto Slab' rel='stylesheet'>
     <title>{% block title %} CardQuest Master {% endblock %}</title>
@@ -16,7 +16,7 @@
   <body>
     <!--NAVBAR-->
     <section class="navbar">
-      <a href="{% url 'home' %}" class="btn" id="active"> Home </a>
+      <a href="{% url 'home' %}" class="btn"> Home </a>
       <a href="{% url 'trainer-list' %}" class="btn"> Trainer </a>
       <a href="{% url 'pokemoncard-list' %}" class="btn"> Pokemon Card </a>
       <a href="{% url 'collection-list' %}" class="btn"> Collection </a>
@@ -25,11 +25,15 @@
     <!--CONTENT-->
     <main>
         {% block content %}
-
+        <div class="homepage">
+          <img src="../static/images/pokeball.png" alt="pokemon">
+          <h1>Welcome Pokemon Center</h1>
+          <h4>Check your data</h4>
+        </div>
+        <img src="../static/images/pikachu.png" alt="pikachu" class="pika">
         {% endblock %}
     </main>
-      
-
+    
     {%include 'includes/footer.html'%}
   </body>
 </html>

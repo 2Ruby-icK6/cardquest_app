@@ -17,8 +17,9 @@ body {
 }
 
 main {
-  padding-top: 60px;
-  padding-bottom: 60px; /* Adjust as needed */
+  text-align: center;
+  padding-top: 10px;
+   padding-bottom: 10px; /* Adjust as needed */
 }
 
 /*NAVBAR*/
@@ -67,8 +68,25 @@ footer {
 
 /*-----------------------------HOME_PAGE---------------------------------------*/
 /*CONTENT*/
-.home-content {
+/* .home-content {
   min-height: 100vh;
+} */
+
+.homepage {
+  text-align: center;
+  font-size: 30px;
+  /* margin-top: 50px; */
+}
+
+.homepage img {
+  width: 200px;
+  height: 150px;
+}
+
+main img {
+  width: 200px;
+  height: 150px;
+  margin-top: 8vh;
 }
 
 /*-----------------------------TRAINER_PAGE------------------------------------*/

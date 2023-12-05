@@ -9,10 +9,10 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="{% static 'css/style.css'}"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link href='https://fonts.googleapis.com/css?family=Roboto Slab' rel='stylesheet'>
-    <title>Pokemon | Collection</title>
+    <title>{% block title %} Pokemon | Collection {% endblock %}</title>
   </head>
   <body>
     <!--NAVBAR-->
@@ -20,7 +20,7 @@
       <a href="{% url 'home' %}" class="btn"> Home </a>
       <a href="{% url 'trainer-list' %}" class="btn"> Trainer </a>
       <a href="{% url 'pokemoncard-list' %}" class="btn"> Pokemon Card </a>
-      <a href="collection.html" class="btn"  id="active"> Collection </a>
+      <a href="{% url 'collection-list' %}" class="btn"> Collection </a>
     </section>
 
     <!--COLLECTION-->
@@ -55,7 +55,7 @@
       </section>
       {% endblock %}
     </main>
-    
+
     {%include 'includes/footer.html'%}
   </body>
 </html>
