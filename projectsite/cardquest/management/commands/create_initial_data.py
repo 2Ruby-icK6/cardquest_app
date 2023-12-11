@@ -1,5 +1,5 @@
 from django.core.management.base import BaseCommand
-from cardquest.models import PokemonCard, Trainer
+from cardquest.models import PokemonCard, Trainer, Collection
 
 class Command (BaseCommand) :
     help = 'Create Initial data for the application'
@@ -7,6 +7,7 @@ class Command (BaseCommand) :
     def handle(self, *args, **kwargs) :
         self.create_pokemon_cards()
         self.create_trainers()
+        self.create_collections()
 
     def create_pokemon_cards (self) :
         card1 = PokemonCard(name="Pikachu", rarity="Rare",hp=60, card_type="Electric", attack="Thunder Shock",
@@ -25,4 +26,13 @@ class Command (BaseCommand) :
         trainer1.save()
 
         self.stdout.write(self.style.SUCCESS('Successfuly created Trainers.'))
+    
+    def create_collections(self):
+        card = PokemonCard.objects.first()  
+        trainer = Trainer.objects.first() 
+
+        collection1 = Collection(card=card, Trainer=trainer, collection_date="2023-12-11")
+        collection1.save()
+
+        self.stdout.write(self.style.SUCCESS('Successfully created Collections.'))
 
