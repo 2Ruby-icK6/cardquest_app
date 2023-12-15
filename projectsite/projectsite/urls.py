@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.urls import path
 from cardquest import views
 from cardquest.views import HomePageView, TrainerList, PokemonCardList, ColleectionList
+from cardquest.views import HomePageView, TrainerList, TrainerCreateView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -25,4 +26,5 @@ urlpatterns = [
     path('trainer_list', TrainerList.as_view(), name='trainer-list'),
     path('pokemoncard_list', PokemonCardList.as_view(), name='pokemoncard-list'),
     path('collection_list', ColleectionList.as_view(), name='collection-list'),
+    path('trainer_list/add', TrainerCreateView.as_view(), name='trainer-add')
 ]

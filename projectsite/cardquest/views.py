@@ -4,6 +4,9 @@ from django.shortcuts import render
 # Create your views here.
 from django.views.generic.list import ListView
 from cardquest.models import PokemonCard, Trainer, Collection
+from django.views.generic.edit import UpdateView, DeleteView, CreateView
+from cardquest.forms import TrainerForm
+from django.urls import reverse_lazy
 
 class HomePageView(ListView):
     model = PokemonCard
@@ -31,3 +34,9 @@ class ColleectionList(ListView):
     context_object_name = 'collection'
     template_name = "collection.html"
     paginate_by = 15
+
+class TrainerCreateView(CreateView):
+    model = Trainer
+    form_class = TrainerForm
+    template_name = 'trainers_crud/trainers.add.html'
+    success_url = reverse_lazy('trainer-list')
