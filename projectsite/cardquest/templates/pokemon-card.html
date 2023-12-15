@@ -9,26 +9,17 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <link rel="stylesheet" href="{% static 'css/style.css'}"/>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link href='https://fonts.googleapis.com/css?family=Roboto Slab' rel='stylesheet'>
     <title>{% block title %} Pokemon | Pokemon Card {% endblock %}</title>
   </head>
   <body>
-    
-    <!--NAVBAR-->
-    <section class="navbar">
-      <a href="{% url 'home' %}" class="btn"> Home </a>
-      <a href="{% url 'trainer-list' %}" class="btn"> Trainer </a>
-      <a href="{% url 'pokemoncard-list' %}" class="btn"> Pokemon Card </a>
-      <a href="{% url 'collection-list' %}" class="btn"> Collection </a>
-    </section>
 
     <main>
       {% block content %}
-      <!--CARDS--><a href="{% url 'pokemoncard-add' %}">Add New Pokemon</a>
+      <a href="{% url 'pokemoncard-add' %}"><button class="btn-add-pk">Add New Pokemon</button></a>
       <section class="cards-container">
-        <!--PIKACHU-->
         {% for object in object_list %}
           <div class="card-box">
             <div class="card">
@@ -78,15 +69,16 @@
                 </table>
               </div>
             </div>
-            <a href="pokemoncard_list/{{ object.id }}"><button>Edit</button></a> |
-            <a  href="pokemoncard_list/{{ object.id }}/delete"><button >Delete</button></a>
+            <a href="pokemoncard_list/{{ object.id }}"><button class="btn-update">Edit</button></a> |
+            <a  href="pokemoncard_list/{{ object.id }}/delete"><button class="btn-delete">Delete</button></a>
           </div>
         {% empty %}
         {% endfor %}
       </section>
+      <div class="pagination-container">
+        {% include 'includes/pagination.html' %}
+      </div> 
       {% endblock %}
     </main>
-
-    {%include 'includes/footer.html'%}
   </body>
 </html>

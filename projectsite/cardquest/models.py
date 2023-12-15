@@ -65,4 +65,4 @@ class Collection (BaseModel) :
     collection_date = models.DateField(null=True, blank=True)
 
     def __str__(self) :
-        return self.name
+        return f"{self.trainer.name} {self.card.name}"

@@ -6,11 +6,11 @@
 }
 
 body {
-  /* background-color: #d3d3d3; */
+  background-color: #d3d3d3;
   background-image: url('../images/bg.png');
-  background-size: cover; /* This property ensures the image covers the entire body */
+  background-size: cover;
   background-position: center;
-  background-attachment: fixed; /* Set the background position as fixed */
+  background-attachment: fixed;
   height: 100%;
   margin: 0;
   padding: 0;
@@ -55,6 +55,165 @@ main {
   color: black;
 }
 
+.btn-update {
+  color: #ffffff;
+  font-size: medium;
+  background-color: #007bff;
+  padding: 5px;
+  width: 100px;
+  border-radius: 15px;
+  margin-top: 1vh;
+  border-style: hidden;
+}
+
+.btn-update:hover {
+  color: #000000;
+  background-color: #80beff;
+}
+
+.btn-delete {
+  color: #ffffff;
+  font-size: medium;
+  background-color: #ffa600;
+  padding: 5px;
+  width: 100px;
+  border-radius: 15px;
+  margin-top: 1vh;
+  border-style: hidden;
+}
+
+.btn-delete:hover {
+  color: #000000;
+  background-color: #ffc04b;
+}
+
+.btn-add {
+  color: #ffffff;
+  font-size: medium;
+  background-color: #0033fe;
+  padding: 10px;
+  width: 200px;
+  border-radius: 15px;
+  margin-left: 135vh;
+  border-style: hidden;
+}
+
+.btn-add:hover {
+  color: #000000;
+  background-color: #7c96ff;
+}
+
+.btn-add-pk {
+  color: #ffffff;
+  font-size: medium;
+  background-color: #0033fe;
+  padding: 10px;
+  width: 200px;
+  border-radius: 15px;
+  border-style: hidden;
+}
+
+.btn-add-pk:hover {
+  color: #000000;
+  background-color: #7c96ff;
+}
+
+.btn-submit {
+  color: #ffffff;
+  font-size: medium;
+  background-color: #0033fe;
+  padding: 10px;
+  width: 200px;
+  border-radius: 15px;
+  border-style: hidden;
+}
+
+.btn-submit:hover {
+  color: #000000;
+  background-color: #7c96ff;
+}
+
+.btn-submit-del {
+  color: #ffffff;
+  font-size: medium;
+  background-color: #fe0000;
+  padding: 10px;
+  width: 200px;
+  margin-top: 10px;
+  border-radius: 15px;
+  border-style: hidden;
+}
+
+.btn-submit-del:hover {
+  color: #000000;
+  background-color: #ff6d6d;
+}
+
+.btn-cancel {
+  color: #ffffff;
+  font-size: medium;
+  background-color: #0033fe;
+  padding: 10px;
+  width: 200px;
+  margin-top: 10px;
+  border-radius: 15px;
+  border-style: hidden;
+}
+
+.btn-cancel:hover {
+  color: #000000;
+  background-color: #7c96ff;
+}
+
+.btn-return {
+  color: #ffffff;
+  font-size: medium;
+  background-color: #fe0000;
+  padding: 10px;
+  width: 200px;
+  margin-top: 10px;
+  border-radius: 15px;
+  border-style: hidden;
+}
+
+.btn-return:hover {
+  color: #000000;
+  background-color: #ff7c7c;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* height: 100vh; */
+}
+
+.form-container {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 2);
+  padding: 20px;
+  width: 500px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+input, select {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 16px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      text-align: center;
+}
+
+
+
+
 /*FOOTER*/
 footer {
   position: fixed;
@@ -68,9 +227,9 @@ footer {
 
 /*-----------------------------HOME_PAGE---------------------------------------*/
 /*CONTENT*/
-/* .home-content {
-  min-height: 100vh;
-} */
+.home-content {
+  min-height: 19vh;
+}
 
 .homepage {
   text-align: center;
@@ -79,14 +238,14 @@ footer {
 }
 
 .homepage img {
-  width: 200px;
-  height: 150px;
+  width: 150px;
+  height: 115px;
 }
 
-main img {
-  width: 200px;
-  height: 150px;
-  margin-top: 8vh;
+main img.pika {
+  width: 180px;
+  height: 180px;
+  margin-top: 3vh;
 }
 
 /*-----------------------------TRAINER_PAGE------------------------------------*/
@@ -545,6 +704,10 @@ main img {
   background-color: #007bff;
   border-color: #007bff;
   z-index: 3;
+}
+
+div.pagination-container {
+  margin-top: -24vh;
 }
 
 /* Social Icons for footer */

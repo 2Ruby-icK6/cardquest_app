@@ -9,53 +9,44 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <link rel="stylesheet" href="{% static 'css/style.css'}"/>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link href='https://fonts.googleapis.com/css?family=Roboto Slab' rel='stylesheet'>
     <title>{% block title %} Pokemon | Collection {% endblock %}</title>
   </head>
   <body>
-    <!--NAVBAR-->
-    <section class="navbar">
-      <a href="{% url 'home' %}" class="btn"> Home </a>
-      <a href="{% url 'trainer-list' %}" class="btn"> Trainer </a>
-      <a href="{% url 'pokemoncard-list' %}" class="btn"> Pokemon Card </a>
-      <a href="{% url 'collection-list' %}" class="btn"> Collection </a>
-    </section>
-
     <!--COLLECTION-->
     <main>
       {% block content %}
-      <section class="collection-container">
+      <a href="{% url 'collection-add' %}"><button class="btn-add">Add New Collection</button></a><br>
+      <section class="trainers-container">
         <table class="styled-table">
           <tbody>
             <tr>
-              <th>Trainer</th>
+              <th>Trainer Name</th>
               <th>Pokemon Card</th>
               <th>Collection Date</th>
+              <th>Action</th>
             </tr>
-
+          {% for object in object_list %}
             <tr>
-              <td>Ash</td>
-              <td>Pikachu</td>
-              <td>2023-01-23</td>
+              <td>{{ object.trainer }}</td>
+              <td>{{ object.card }}</td>
+              <td>{{ object.collection_date }}</td>
+              <td>
+                <a href="collection_list/{{ object.id }}"><button class="btn-update">Edit</button></a> |
+                <a  href="collection_list/{{ object.id }}/delete" ><button class="btn-delete">Delete</button></a>
+              </td>
             </tr>
-            <tr>
-              <td>Ash</td>
-              <td>Pikachu</td>
-              <td>2023-01-23</td>
-            </tr>
-            <tr>
-              <td>Ash</td>
-              <td>Pikachu</td>
-              <td>2023-01-23</td>
-            </tr>
+            {% empty %}
+          {% endfor %}
           </tbody>
         </table>
       </section>
+        <div>
+          {% include 'includes/pagination.html' %}
+        </div>  
       {% endblock %}
     </main>
-
-    {%include 'includes/footer.html'%}
   </body>
 </html>
