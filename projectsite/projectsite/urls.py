@@ -19,6 +19,7 @@ from django.urls import path
 from cardquest import views
 from cardquest.views import HomePageView, TrainerList, PokemonCardList, ColleectionList
 from cardquest.views import TrainerCreateView, TrainerUpdateView, TrainerDeleteView
+from cardquest.views import PokemonCardCreateView, PokemonCardUpdateView, PokemonCardDeleteView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -28,5 +29,8 @@ urlpatterns = [
     path('collection_list', ColleectionList.as_view(), name='collection-list'),
     path('trainer_list/add', TrainerCreateView.as_view(), name='trainer-add'),
     path('trainer_list/<pk>', TrainerUpdateView.as_view(), name='trainer-update'),
-    path('trainer_list/<pk>/delete',TrainerDeleteView.as_view(), name='trainer-delete')
+    path('trainer_list/<pk>/delete',TrainerDeleteView.as_view(), name='trainer-delete'),
+    path('pokemoncard_list/add', PokemonCardCreateView.as_view(), name='pokemoncard-add'),
+    path('pokemoncard_list/<pk>', PokemonCardUpdateView.as_view(), name='pokemoncard-update'),
+    path('pokemoncard_list/<pk>/delete',PokemonCardDeleteView.as_view(), name='pokemoncard-delete')
 ]
