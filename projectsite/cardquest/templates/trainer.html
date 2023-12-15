@@ -9,7 +9,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <link rel="stylesheet" href="{% static 'css/style.css'}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css'}"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link href='https://fonts.googleapis.com/css?family=Roboto Slab' rel='stylesheet'>
     <title>{% block title %} Pokemon | Trainers {% endblock %}</title>
@@ -26,7 +26,7 @@
     <!--TRAINERS-->
     <main>
       {% block content %}
-      <a href="{% url 'trainer-add' %}" class="btn btn-outline-primary">Add New
+      <a href="{% url 'trainer-add' %}">Add New
         Trainer</a><br>
         <section class="trainers-container">
         
@@ -46,8 +46,8 @@
               <td>{{ object.location }}</td>
               <td>{{ object.email}} </td>
               <td>
-                <a href="trainer_list/{{ object.id }}" >Edit</a> |
-                <a href="trainer_list/{{ object.id }}/delete" >Delete</a>
+                <a href="trainer_list/{{ object.id }}"><button >Edit</button></a> |
+                <a  href="trainer_list/{{ object.id }}/delete" ><button >Delete</button></a>
               </td>
             </tr>
           {% empty %}
